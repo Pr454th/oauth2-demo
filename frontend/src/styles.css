@@ -1,0 +1,393 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+  background: #f8faf8;
+  color: #25332a;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid rgba(65, 127, 81, 0.35);
+  outline-offset: 3px;
+}
+
+:root {
+  --green: #4b8a5c;
+  --green-dark: #376d46;
+  --green-pale: #edf5ee;
+  --ink: #25332a;
+  --muted: #77817a;
+  --line: #e6ebe7;
+}
+
+app-home {
+  display: block;
+}
+
+app-home .welcome,
+app-home .section-heading,
+app-home .detail-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+app-home .welcome {
+  margin-bottom: 32px;
+}
+
+app-home .eyebrow {
+  margin: 0 0 10px;
+  color: var(--green-dark);
+  font-size: 11px;
+  font-weight: 750;
+  letter-spacing: 1.5px;
+}
+
+app-home h1,
+app-home h2,
+app-home p {
+  margin-top: 0;
+}
+
+app-home h1 {
+  margin-bottom: 9px;
+  color: var(--ink);
+  font-size: clamp(32px, 5vw, 42px);
+  letter-spacing: -1.8px;
+  line-height: 1.1;
+}
+
+app-home .period {
+  color: var(--green);
+}
+
+app-home .intro {
+  margin-bottom: 0;
+  color: var(--muted);
+  font-size: 15px;
+}
+
+app-home .status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 12px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: white;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 650;
+}
+
+app-home .status-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #c2c8c4;
+}
+
+app-home .signed-in .status-dot {
+  background: var(--green);
+  box-shadow: 0 0 0 3px var(--green-pale);
+}
+
+app-home .welcome-card {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-bottom: 42px;
+  padding: 24px;
+  border: 1px solid #dce9df;
+  border-radius: 15px;
+  background: linear-gradient(110deg, #edf6ef 0%, #f8fbf7 72%);
+}
+
+app-home .welcome-icon {
+  display: grid;
+  width: 46px;
+  height: 46px;
+  flex: 0 0 46px;
+  place-items: center;
+  border-radius: 14px;
+  background: white;
+  color: var(--green-dark);
+  font-size: 22px;
+}
+
+app-home .welcome-copy {
+  flex: 1;
+}
+
+app-home .welcome-copy h2 {
+  margin-bottom: 5px;
+  color: var(--ink);
+  font-size: 17px;
+  letter-spacing: -0.4px;
+}
+
+app-home .welcome-copy p {
+  margin-bottom: 0;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+app-home .button {
+  display: inline-flex;
+  min-height: 42px;
+  align-items: center;
+  justify-content: center;
+  padding: 0 16px;
+  border-radius: 9px;
+  font-size: 13px;
+  font-weight: 650;
+  text-decoration: none;
+  transition: background 160ms ease, transform 160ms ease;
+}
+
+app-home .button:hover {
+  transform: translateY(-1px);
+}
+
+app-home .button-primary {
+  background: var(--green);
+  color: white;
+}
+
+app-home .button-primary:hover {
+  background: var(--green-dark);
+}
+
+app-home .button-secondary {
+  border: 1px solid var(--line);
+  background: white;
+  color: var(--ink);
+}
+
+app-home .section-heading {
+  margin-bottom: 16px;
+}
+
+app-home .section-heading .eyebrow {
+  margin-bottom: 6px;
+}
+
+app-home .section-heading h2 {
+  margin-bottom: 0;
+  color: var(--ink);
+  font-size: 20px;
+  letter-spacing: -0.6px;
+}
+
+app-home .text-link {
+  color: var(--green-dark);
+  font-size: 12px;
+  font-weight: 650;
+  text-decoration: none;
+}
+
+app-home .text-link span {
+  margin-left: 3px;
+}
+
+app-home .text-link:hover,
+app-home .resource-links a:hover {
+  text-decoration: underline;
+}
+
+app-home .link-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+  margin-bottom: 38px;
+}
+
+app-home .link-card {
+  display: flex;
+  min-height: 94px;
+  align-items: center;
+  gap: 13px;
+  padding: 16px;
+  border: 1px solid var(--line);
+  border-radius: 13px;
+  background: white;
+  color: inherit;
+  text-decoration: none;
+  transition: border-color 160ms ease, box-shadow 160ms ease, transform 160ms ease;
+}
+
+app-home .link-card:hover {
+  transform: translateY(-2px);
+  border-color: #bdd3c1;
+  box-shadow: 0 8px 22px rgba(39, 66, 48, 0.07);
+}
+
+app-home .card-icon,
+app-home .small-icon {
+  display: grid;
+  flex: 0 0 auto;
+  place-items: center;
+  border-radius: 11px;
+  font-size: 19px;
+}
+
+app-home .card-icon {
+  width: 42px;
+  height: 42px;
+}
+
+app-home .green-icon {
+  background: #e9f4eb;
+  color: #3e8051;
+}
+
+app-home .blue-icon {
+  background: #eaf1fb;
+  color: #4c74ac;
+}
+
+app-home .amber-icon {
+  background: #fbf2e5;
+  color: #ac7b34;
+}
+
+app-home .card-copy {
+  display: grid;
+  flex: 1;
+  gap: 5px;
+}
+
+app-home .card-copy strong {
+  color: var(--ink);
+  font-size: 13px;
+}
+
+app-home .card-copy span {
+  color: var(--muted);
+  font-size: 11px;
+}
+
+app-home .arrow {
+  align-self: flex-start;
+  color: #9aa59d;
+  font-size: 15px;
+}
+
+app-home .details-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+  scroll-margin-top: 24px;
+}
+
+app-home .detail-card {
+  min-height: 170px;
+  padding: 19px;
+  border: 1px solid var(--line);
+  border-radius: 13px;
+  background: white;
+  scroll-margin-top: 24px;
+}
+
+app-home .detail-heading h2 {
+  margin-bottom: 0;
+  color: var(--ink);
+  font-size: 14px;
+}
+
+app-home .small-icon {
+  width: 30px;
+  height: 30px;
+  font-size: 15px;
+}
+
+app-home .detail-card > p {
+  min-height: 40px;
+  margin: 17px 0 14px;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+app-home .detail-card > p strong {
+  color: var(--ink);
+  font-weight: 600;
+  overflow-wrap: anywhere;
+}
+
+app-home .resource-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px 14px;
+  margin-top: 12px;
+}
+
+app-home .resource-links a {
+  color: var(--green-dark);
+  font-size: 12px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+@media (max-width: 760px) {
+  app-home .link-grid,
+  app-home .details-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 560px) {
+  app-home .welcome {
+    align-items: flex-start;
+  }
+
+  app-home .status-pill {
+    padding: 7px 9px;
+    font-size: 10px;
+  }
+
+  app-home .welcome-card {
+    flex-wrap: wrap;
+    gap: 13px;
+    padding: 18px;
+  }
+
+  app-home .welcome-copy {
+    min-width: calc(100% - 62px);
+  }
+
+  app-home .welcome-card .button {
+    width: 100%;
+  }
+
+  app-home .link-grid,
+  app-home .details-grid {
+    grid-template-columns: 1fr;
+  }
+
+  app-home .link-grid {
+    margin-bottom: 30px;
+  }
+
+  app-home .section-heading .text-link {
+    font-size: 11px;
+  }
+}
