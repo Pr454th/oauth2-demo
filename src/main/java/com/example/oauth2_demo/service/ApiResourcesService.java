@@ -37,4 +37,9 @@ public class ApiResourcesService {
     public void deleteApiResource(Long id) {
         apiResourcesRepository.deleteById(id);
     }
+
+    public ApiResources getApiResourceByPathAndMethod(String apiPath, String method){
+        Optional<ApiResources> apiResource=apiResourcesRepository.findByEndpointAndHttpMethod(apiPath, method);
+        return apiResource.orElse(null);
+    }
 }
